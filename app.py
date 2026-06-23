@@ -30,9 +30,10 @@ st.markdown("---")
 
 # ---------- 侧边栏 ----------
 with st.sidebar:
-    with st.expander("⚙️ API 配置（默认已填好）", expanded=False):
-        api_key = st.text_input("DeepSeek API Key", type="password",
-                                value=DEEPSEEK_KEY)
+    with st.expander("⚙️ API 配置（需自行填入 Key）", expanded=True):
+        api_key = st.text_input("DeepSeek / Anthropic API Key", type="password",
+                                placeholder="sk-... 粘贴你的 API Key",
+                                help="没有 Key 的话暂时无法使用。注册 DeepSeek 可获得 ¥9 体验金")
         model_name = st.selectbox("模型", ["deepseek-v4-flash", "deepseek-v4-pro"], index=0)
     st.markdown("---")
     st.markdown("### 📖 使用说明")
